@@ -24,7 +24,8 @@ ALX Travel App allows users to view travel listings with details such as title, 
 ## Setup Instructions
 
 ```bash
-// 1. **Clone the repository**
+// 1.Clone the repository
+
 git clone <your-repo-url>
 cd alx_travel_app
 Install dependencies
