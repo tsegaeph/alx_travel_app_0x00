@@ -70,7 +70,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS("Existing listings/bookings/reviews deleted."))
 
         self.stdout.write("Creating users...")
-        users: List[User] = []
+        users: List[User] = [] # type: ignore
         for i in range(1, num_users + 1):
             username = f"seed_user_{i}"
             email = f"{username}@example.com"
