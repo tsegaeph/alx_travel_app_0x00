@@ -1,1 +1,0 @@
-i just created this because alx glitched and wants a file named "Readme file exists and not empty" and check if it's empty or not
