@@ -1,7 +1,11 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import TravelListingViewSet, BookingViewSet
+
+router = DefaultRouter()
+router.register(r'travel-listings', TravelListingViewSet, basename='travellisting')
+router.register(r'bookings', BookingViewSet, basename='booking')
 
 urlpatterns = [
-    path('travel-listings/', views.TravelListingListCreate.as_view(), name='travellisting-list-create'),
-    path('travel-listings/<int:pk>/', views.TravelListingRetrieveUpdateDelete.as_view(), name='travellisting-rud'),
+    path('api/', include(router.urls)),  # all CRUD endpoints under /api/
 ]

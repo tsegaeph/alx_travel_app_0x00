@@ -1,13 +1,18 @@
-from rest_framework import generics
-from .models import TravelListing
-from .serializers import TravelListingSerializer
+from rest_framework import viewsets
+from .models import TravelListing, Booking
+from .serializers import TravelListingSerializer, BookingSerializer
 
-# List all travel listings or create a new one
-class TravelListingListCreate(generics.ListCreateAPIView):
+class TravelListingViewSet(viewsets.ModelViewSet):
+    """
+    Provides CRUD operations for TravelListing
+    """
     queryset = TravelListing.objects.all()
     serializer_class = TravelListingSerializer
 
-# Retrieve, update, or delete a single travel listing
-class TravelListingRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
-    queryset = TravelListing.objects.all()
-    serializer_class = TravelListingSerializer
+
+class BookingViewSet(viewsets.ModelViewSet):
+    """
+    Provides CRUD operations for Booking
+    """
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
